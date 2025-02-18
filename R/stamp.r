@@ -132,7 +132,7 @@ stamp <- function(T1, T2, dc=0, direction=FALSE, distance=FALSE, ...){
   for(i in 1:nrow(stmp)) {
     nbl[[i]] <- c(unlist(nbl[i]), i)
     }
-  stmp$TMP <- spdep::n.comp.nb(nbl)$comp.id
+  stmp$TMP <- attr(nbl, "ncomp")$comp.id
   }
   
   #Label all other LEV2 movement types...
